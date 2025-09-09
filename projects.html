@@ -22,12 +22,6 @@
         </div>
         <div id="progress" aria-hidden="true"></div>
       </h1>
-        <!-- Hamburger menu for mobile -->
-        <div class="hamburger" id="hamburgerMenu" aria-label="Open navigation" tabindex="0" role="button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
 
       <nav class="topnav" aria-label="Primary">
         <a href="index.html">About</a>
@@ -152,30 +146,6 @@
   <script>
     (() => {
       const mainEl = document.querySelector('main');
-        /* ---------- Hamburger menu toggle for mobile ---------- */
-        const hamburger = document.getElementById('hamburgerMenu');
-        const topnav = document.querySelector('.topnav');
-        if (hamburger && topnav) {
-          hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            topnav.classList.toggle('open');
-          });
-          hamburger.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              hamburger.classList.toggle('open');
-              topnav.classList.toggle('open');
-            }
-          });
-          // Close nav when clicking outside (mobile only)
-          document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 700 && topnav.classList.contains('open')) {
-              if (!topnav.contains(e.target) && !hamburger.contains(e.target)) {
-                topnav.classList.remove('open');
-                hamburger.classList.remove('open');
-              }
-            }
-          });
-        }
 
       /* ---------- Neon halo follow ---------- */
       const setMouse = (x, y) => {
