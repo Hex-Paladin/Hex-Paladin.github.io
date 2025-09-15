@@ -214,6 +214,11 @@ main>footer {
     padding: 3rem;
 }
 
+/* First section needs extra top padding to account for sticky header */
+main>section:first-child {
+    padding-top: calc(var(--header-h) + 3rem);
+}
+
 main>section>*,
 main>footer>* {
     max-width: var(--content-max);
