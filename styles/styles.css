@@ -121,6 +121,14 @@
     --avatar-scan-speed: 2.5s;
     --avatar-glow-intensity: 0.8;
     --avatar-matrix-speed: 15s;
+    
+    /* Timeline colors */
+    --neon-cyan: #00ffff;
+    --neon-green: #39ff14;
+    --neon-bright: #4dff1a;
+    --bg-dark: #0b0f0c;
+    --text-dim: #666;
+    --text-bright: #e8ffe8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -782,10 +790,6 @@ img.avatar {
 .skills .skills-grid>section.reveal {
     animation: card-pop 1000ms var(--card-pop-ease) both;
 }
-
-/* ==========================================================================
-   PROJECTS
-   ========================================================================== */
 
 /* ==========================================================================
    PROJECTS
@@ -1585,6 +1589,60 @@ footer :where(a:hover, a:focus) {
     }
 }
 
+@keyframes glitch-1 {
+    0% {
+        transform: translate(0);
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    }
+    5% {
+        transform: translate(-1px, 1px);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    10% {
+        transform: translate(1px, -1px);
+        clip-path: polygon(0 15%, 100% 15%, 100% 85%, 0 85%);
+    }
+    15% {
+        transform: translate(-1px, 0);
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+    }
+    20% {
+        transform: translate(0);
+        clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    }
+    100% {
+        transform: translate(0);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        transform: translate(0);
+        clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+    }
+    5% {
+        transform: translate(1px, -1px);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    10% {
+        transform: translate(-1px, 1px);
+        clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    }
+    15% {
+        transform: translate(1px, 0);
+        clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+    }
+    20% {
+        transform: translate(0);
+        clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+    }
+    100% {
+        transform: translate(0);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
 /* ==========================================================================
    ACCESSIBILITY
    ========================================================================== */
@@ -1693,27 +1751,6 @@ footer :where(a:hover, a:focus) {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
     position: relative;
     z-index: 15;
-}
-
-.timeline-dot {
-    width: 18px;
-    height: 18px;
-    background: var(--neon-green);
-    border: 3px solid var(--bg-dark);
-    border-radius: 50%;
-    box-shadow: 
-        0 0 0 4px var(--neon-green),
-        0 0 20px var(--neon-green);
-    position: relative;
-    z-index: 15;
-}
-
-.timeline-item.current .timeline-dot {
-    background: var(--neon-cyan);
-    box-shadow: 
-        0 0 0 4px var(--neon-cyan),
-        0 0 30px var(--neon-cyan);
-    animation: pulse-timeline 2s infinite;
 }
 
 .timeline-content {
@@ -1865,19 +1902,6 @@ footer :where(a:hover, a:focus) {
     }
 }
 
-@keyframes pulse-timeline {
-    0%, 100% {
-        box-shadow: 
-            0 0 0 4px var(--neon-cyan),
-            0 0 20px var(--neon-cyan);
-    }
-    50% {
-        box-shadow: 
-            0 0 0 8px var(--neon-cyan),
-            0 0 40px var(--neon-cyan);
-    }
-}
-
 /* Mobile timeline adjustments */
 @media (max-width: 700px) {
     .timeline::before {
@@ -1898,36 +1922,21 @@ footer :where(a:hover, a:focus) {
         padding: 1.5rem;
     }
     
-    .timeline-content::before,
-    .timeline-item:nth-child(odd) .timeline-content::before {
-        left: -24px;
-        right: auto;
-        border-left-color: transparent;
-        border-right-color: var(--text-dim);
-        opacity: 0;
-        display: none;
-    }
-    
-    .timeline-content:hover::before {
-        border-left-color: transparent;
-        border-right-color: var(--neon-green);
-        opacity: 0;
-        display: none;
-    }
-    
     .timeline-date {
         font-size: 0.7rem;
         padding: 0.3rem 0.6rem;
     }
     
+    /* Hide expandable items on mobile to save space */
     .timeline-item.expandable {
         display: none;
     }
-    
-    .timeline-item,
-    .timeline-item:nth-child(even) {
-        transform: translateX(-30px);
-        animation: timeline-slide-in-left 0.6s ease-out forwards;
+}
+
+/* Desktop timeline - ensure expandable items are visible */
+@media (min-width: 701px) {
+    .timeline-item.expandable {
+        display: block;
     }
 }
 
