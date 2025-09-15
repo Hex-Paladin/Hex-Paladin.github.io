@@ -1926,11 +1926,6 @@ footer :where(a:hover, a:focus) {
         font-size: 0.7rem;
         padding: 0.3rem 0.6rem;
     }
-    
-    /* Hide expandable items on mobile to save space */
-    .timeline-item.expandable {
-        display: none;
-    }
 }
 
 /* Desktop timeline - ensure expandable items are visible */
