@@ -40,18 +40,22 @@
     <!-- About -->
     <section id="about" aria-label="About">
       <h2>About</h2>
-      <div class="avatar-container">
-        <img class="avatar" src="images/Bryan.jpg" alt="Professional headshot of Bryan Snyder" height="225" width="150"
-          loading="lazy" decoding="async" />
-        <div class="scan-line" aria-hidden="true"></div>
-        <div class="data-overlay" aria-hidden="true"></div>
+      <div class="about-content">
+        <div class="avatar-container">
+          <img class="avatar" src="images/Bryan.jpg" alt="Professional headshot of Bryan Snyder" height="225" width="150"
+            loading="lazy" decoding="async" />
+          <div class="scan-line" aria-hidden="true"></div>
+          <div class="data-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="about-text">
+          <p>Hello! I am Bryan Snyder a software &amp; systems engineer with 5+ years of programming experience both
+            education and professional. I build practical solutions that ship, scale, and make teams faster. <br><br>Recent work includes designing secure cross-platform systems, building a mobile app plus a custom WordPress
+            plugin, and automating identity/data workflows with PowerShell &amp; Microsoft Graph — cutting manual steps and
+            improving uptime. <br><br>I've also developed Unity Experience for education, optimized performance for low-end devices, and presented
+            game-based learning research at national conferences. When I'm not coding, I'm documenting, mentoring, and
+            smoothing the release pipeline so teams can focus on value.</p>
+        </div>
       </div>
-      <p>Hello! I am Bryan Snyder a software &amp; systems engineer with 5+ years of programming experience both
-        education and professional. I build practical solutions that ship, scale, and make teams faster. <br><br>Recent work includes designing secure cross-platform systems, building a mobile app plus a custom WordPress
-        plugin, and automating identity/data workflows with PowerShell &amp; Microsoft Graph — cutting manual steps and
-        improving uptime. <br><br>I've also developed Unity Experience for education, optimized performance for low-end devices, and presented
-        game-based learning research at national conferences. When I'm not coding, I'm documenting, mentoring, and
-        smoothing the release pipeline so teams can focus on value.</p>
     </section>
 
     <!-- Skills -->
@@ -62,13 +66,15 @@
         <section>
           <h3>Languages</h3>
           <ul>
-            <li>JavaScript</li>
             <li>C#</li>
-            <li>C++</li>
-            <li>Java</li>
+            <li>TypeScript/JavaScript</li>
+            <li>SQL</li>
             <li>PHP</li>
             <li>Python</li>
-            <li>SQL</li>
+            <li>Java</li>
+            <li>C/C++</li>
+            <li>HTML</li>
+            <li>CSS</li>
           </ul>
         </section>
 
@@ -77,50 +83,58 @@
           <ul>
             <li>React Native</li>
             <li>Vue</li>
-            <li>CSS (modern, responsive)</li>
-            <li>WordPress (custom plugin)</li>
-            <li>Unity (UI &amp; gameplay systems)</li>
+            <li>WordPress</li>
+            <li>Responsive UI</li>
           </ul>
         </section>
 
         <section>
           <h3>Backend &amp; APIs</h3>
           <ul>
-            <li>REST &amp; OAuth</li>
-            <li>Microsoft Graph API</li>
-            <li>OpenAI API</li>
+            <li>.NET</li>
+            <li>REST APIs</li>
             <li>MySQL</li>
+            <li>Microsoft Graph API</li>
+            <li>OAuth 2.0 (PKCE)</li>
+            <li>OpenAI API</li>
           </ul>
         </section>
 
         <section>
-          <h3>Cloud &amp; Admin</h3>
+          <h3>Game &amp; Graphics</h3>
           <ul>
-            <li>Microsoft 365 Administration</li>
-            <li>Azure AD / Entra ID</li>
-            <li>PowerShell automation</li>
-            <li>CI/CD pipelines</li>
+            <li>Unity (URP/HDRP)</li>
+            <li>Shader Graph</li>
+            <li>2D and 3D Graphics</li>
+            <li>Animation Rigging (IK)</li>
+            <li>NavMesh/AI</li>
+            <li>Physics</li>
+            <li>Post-processing</li>
           </ul>
         </section>
 
         <section>
-          <h3>Tools &amp; Practices</h3>
+          <h3>DevOps &amp; Tooling</h3>
           <ul>
-            <li>Git &amp; GitHub</li>
+            <li>Git/GitHub</li>
+            <li>CI/CD</li>
             <li>VS Code</li>
-            <li>Agile &amp; Scrum</li>
-            <li>Technical documentation</li>
+            <li>Visual Studio</li>
+            <li>Windows</li>
+            <li>Linux</li>
+            <li>JetBrains IDEs</li>
           </ul>
         </section>
 
         <section>
-          <h3>Focus Areas</h3>
+          <h3>Methods &amp; Architecture</h3>
           <ul>
+            <li>Agile/Scrum</li>
             <li>Software Architecture</li>
-            <li>Mobile App Development</li>
-            <li>Debugging &amp; Performance</li>
-            <li>Security &amp; Identity</li>
-            <li>AI Integration</li>
+            <li>Debugging</li>
+            <li>Documentation</li>
+            <li>Project Management</li>
+            <li>Cybersecurity</li>
           </ul>
         </section>
 
@@ -199,6 +213,9 @@
         <fieldset>
           <legend>How did you find out about me?</legend>
           <label><input type="radio" name="source" value="social" required> Social Media</label>
+          <label><input type="radio" name="source" value="Application" required checked> Application</label>
+          <label><input type="radio" name="source" value="Job Board" required checked> Job Board</label>
+          <label><input type="radio" name="source" value="Recruiter" required checked> Recruiter</label>
           <label><input type="radio" name="source" value="referral" required> Friend / Acquaintance / Coworker</label>
           <label><input type="radio" name="source" value="other" required checked> Other</label>
         </fieldset>
@@ -227,7 +244,7 @@
         </li>
         <li><a href="https://www.linkedin.com/in/brysnyder/" aria-label="LinkedIn"><img src="icons/linkedin.svg" alt="" height="30"
               width="30" loading="lazy" decoding="async"></a></li>
-        <li><a href="https://discordapp.com/users/542459120683581462" aria-label="Discord"><img src="icons/discord.png" alt="" height="30"
+        <li><a href="https://discordapp.com/users/542459120683581462" aria-label="Discord"><img src="icons/discord.svg" alt="" height="30"
               width="30" loading="lazy" decoding="async"></a></li>
       </ul>
     </footer>
@@ -261,6 +278,7 @@
           "Application Engineer",
           "Software Developer",
           "Game Developer",
+          "Web Developer",
           "Full-Stack Developer",
           "Mobile App Developer",
           "DevOps Engineer",
@@ -440,6 +458,7 @@
           return span;
         });
         spans.forEach(span => el.appendChild(span));
+
         // Add cursor before first character
         let cursorSpan = document.createElement('span');
         cursorSpan.className = 'type-cursor';
@@ -469,6 +488,10 @@
             // Ensure cursor stays at end after all text is revealed
             setTimeout(() => {
               spans[totalChars - 1].after(cursorSpan);
+              // Hide cursor after 5 seconds of being stationary
+              setTimeout(() => {
+                cursorSpan.style.display = 'none';
+              }, 5000);
             }, 100);
           }
         };

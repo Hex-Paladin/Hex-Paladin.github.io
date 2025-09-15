@@ -33,105 +33,50 @@
       </nav>
     </header>
 
-    <!-- Education Overview -->
-    <section id="overview" aria-label="Education Overview">
-      <h2>Learning Journey</h2>
-      <p>A commitment to continuous learning and staying current with emerging technologies, combined with formal education and hands-on experience in software development and systems engineering.</p>
-    </section>
+    <!-- Timeline -->
+    <section id="timeline" aria-label="Education Timeline">
+      <h2>Education Timeline</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <span class="timeline-date">2021 — 2024</span>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <h3 data-text="B.S., Computer Science">B.S., Computer Science</h3>
+            <div class="timeline-company">Eastern Washington University</div>
+            <p>Graphics/VR focus; Game Dev Club; Beowulf learning project (Unity); NCUR presentation.</p>
+          </div>
+        </div>
 
-    <!-- Formal Education -->
-    <section id="formal" class="skills" aria-label="Formal Education">
-      <h2>Academic Background</h2>
-      <div class="skills-grid">
-
-        <section>
-          <h3 data-text="Computer Science">Computer Science</h3>
-          <ul>
-            <li>Software Engineering Principles</li>
-            <li>Data Structures & Algorithms</li>
-            <li>Object-Oriented Programming</li>
-            <li>Database Systems</li>
-            <li>System Architecture</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 data-text="Information Systems">Information Systems</h3>
-          <ul>
-            <li>Systems Analysis & Design</li>
-            <li>Network Administration</li>
-            <li>IT Project Management</li>
-            <li>Business Process Analysis</li>
-            <li>Technology Integration</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 data-text="Game Development">Game Development</h3>
-          <ul>
-            <li>Unity Engine Programming</li>
-            <li>3D Graphics & Animation</li>
-            <li>User Experience Design</li>
-            <li>Performance Optimization</li>
-            <li>Educational Technology</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 data-text="Research Methods">Research Methods</h3>
-          <ul>
-            <li>Academic Research Methodology</li>
-            <li>Statistical Analysis</li>
-            <li>Data Collection & Analysis</li>
-            <li>Technical Writing</li>
-            <li>Conference Presentations</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 data-text="Cloud Computing">Cloud Computing</h3>
-          <ul>
-            <li>Microsoft Azure Fundamentals</li>
-            <li>Cloud Architecture Patterns</li>
-            <li>DevOps & CI/CD</li>
-            <li>Infrastructure as Code</li>
-            <li>Security Best Practices</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 data-text="Professional Development">Professional Development</h3>
-          <ul>
-            <li>Agile & Scrum Methodologies</li>
-            <li>Technical Leadership</li>
-            <li>Communication Skills</li>
-            <li>Team Collaboration</li>
-            <li>Mentoring & Knowledge Transfer</li>
-          </ul>
-        </section>
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <span class="timeline-date">2018 — 2020</span>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <h3 data-text="A.S., Computer Science">A.S., Computer Science</h3>
+            <div class="timeline-company">South Puget Sound Community College</div>
+            <p>Started programming (Java) and foundational Physics coursework.</p>
+          </div>
+        </div>
 
       </div>
     </section>
 
-    <!-- Certifications & Achievements -->
-    <section id="certifications" aria-label="Certifications & Achievements">
-      <h2>Certifications & Achievements</h2>
-      <p><strong>Microsoft Technologies:</strong> Extensive hands-on experience with Microsoft 365, Azure AD, PowerShell, and Graph API integration.</p>
-      <p><strong>Programming Proficiency:</strong> Demonstrated expertise in multiple programming languages including C#, JavaScript, Python, and modern web technologies.</p>
-      <p><strong>Research Contributions:</strong> Published research in game-based learning and presented findings at national educational technology conferences.</p>
-      <p><strong>Industry Recognition:</strong> Contributed to open source projects and maintained active participation in developer communities.</p>
-      <p><strong>Continuous Learning:</strong> Regularly updated skills through online courses, workshops, and hands-on experimentation with emerging technologies.</p>
+    <!-- Summary -->
+    <section id="summary" aria-label="Education Summary">
+      <h2>Learning Philosophy</h2>
+      <p>A commitment to continuous learning and staying current with emerging technologies, combined with formal education and hands-on experience in software development and systems engineering.</p>
+      <p><strong>Academic Focus:</strong> Computer science fundamentals with specialized emphasis on graphics programming, VR development, and educational technology research.</p>
+      <p><strong>Practical Application:</strong> Bridging academic learning with real-world projects through research assistantships, game development clubs, and industry collaboration.</p>
+      <p><strong>Continuous Growth:</strong> Actively pursuing emerging technologies including AI integration, cloud architecture, and modern development practices to stay at the forefront of the field.</p>
     </section>
 
-    <!-- Ongoing Learning -->
-    <section id="learning" aria-label="Ongoing Learning">
-      <h2>Current Focus Areas</h2>
-      <p>Technology evolves rapidly, and staying current is essential for effective software development:</p>
-      <p><strong>AI & Machine Learning:</strong> Exploring OpenAI API integration, natural language processing, and intelligent automation opportunities.</p>
-      <p><strong>Cloud Architecture:</strong> Deepening knowledge of cloud-native applications, microservices, and serverless computing patterns.</p>
-      <p><strong>Mobile Development:</strong> Advancing React Native expertise and exploring cross-platform development best practices.</p>
-      <p><strong>DevOps Evolution:</strong> Learning modern CI/CD practices, container orchestration, and infrastructure automation tools.</p>
-      <p><strong>Security:</strong> Staying updated on cybersecurity trends, secure coding practices, and identity management solutions.</p>
+    <!-- Contact Me Section -->
+    <section class="contact-me-section" aria-label="Contact">
+      <a href="index.html#contact" class="contact-me-button">Contact Me</a>
     </section>
 
     <footer>
@@ -198,6 +143,20 @@
       }, { threshold: 0.3 });
       skillCards.forEach(c => skillsObserver.observe(c));
 
+      /* ---------- Timeline: glitch-on-reveal ---------- */
+      const timelineItems = document.querySelectorAll('.timeline-item .timeline-content');
+      const timelineObserver = new IntersectionObserver((entries, obs) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const item = e.target;
+          item.classList.add('reveal');
+          const h = item.querySelector('h3');
+          if (h && !h.dataset.text) h.dataset.text = h.textContent.trim();
+          obs.unobserve(item);
+        }
+      }, { threshold: 0.3 });
+      timelineItems.forEach(item => timelineObserver.observe(item));
+
       /* ---------- Section titles ---------- */
       const sectionH2s = document.querySelectorAll('main > section[id] > h2');
       sectionH2s.forEach(h2 => {
@@ -220,7 +179,7 @@
       sectionH2s.forEach(h => titleObserver.observe(h));
 
       /* ---------- Typewriter targets (per-letter effect) ---------- */
-      const TYPE_TARGETS = ['#overview p', '#certifications p', '#learning p'].join(',');
+      const TYPE_TARGETS = ['#summary p'].join(',');
       function wrapTypewriterText(el) {
         if (!el || el.dataset.typed) return;
         const text = el.textContent;
@@ -259,8 +218,13 @@
           if (currentPos < totalChars) {
             requestAnimationFrame(cursorMove);
           } else {
+            // Ensure cursor stays at end after all text is revealed
             setTimeout(() => {
               spans[totalChars - 1].after(cursorSpan);
+              // Hide cursor after 5 seconds of being stationary
+              setTimeout(() => {
+                cursorSpan.style.display = 'none';
+              }, 5000);
             }, 100);
           }
         };
