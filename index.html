@@ -5,7 +5,11 @@
   <meta charset="utf-8" />
   <title>Bryan Snyder — Portfolio</title>
   <meta name="author" content="Bryan Snyder" />
-  <meta name="description" content="Bryan Snyder - Software Engineer specializing in full-stack development, Unity game development, and AI integration. View my projects, experience, and technical skills." />
+  <meta name="description" content="Bryan Snyder - Software Engineer specializing in full-stack developme      /* ---------- Cycling Title Typewriter Effect ---------- */
+      const cyclingTitle = document.querySelector('.cycling-title');
+      // const cyclingCursor = document.querySelector('.cycling-cursor'); // Cursor removed
+      
+      if (cyclingTitle /* && cyclingCursor */) {nity game development, and AI integration. View my projects, experience, and technical skills." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark light" />
   <link rel="preconnect" href="https://formspree.io" />
@@ -51,7 +55,7 @@
         <div class="about-text">
           <p>Hello! I am Bryan Snyder a software &amp; systems engineer with 5+ years of programming experience both
             education and professional. I build practical solutions that ship, scale, and make teams faster. <br><br>Recent work includes designing secure cross-platform systems, building a mobile app plus a custom WordPress
-            plugin, and automating identity/data workflows with PowerShell &amp; Microsoft Graph — cutting manual steps and
+            plugin, and automating identity/data workflows with PowerShell &amp; Microsoft Graph, cutting manual steps and
             improving uptime. <br><br>I've also developed Unity Experience for education, optimized performance for low-end devices, and presented
             game-based learning research at national conferences. When I'm not coding, I'm documenting, mentoring, and
             smoothing the release pipeline so teams can focus on value.</p>
@@ -444,8 +448,8 @@
       }, { root: mainEl, threshold: 0.25 });
       Experience.forEach(p => projObserver.observe(p));
 
-      /* ---------- Typewriter targets (per-letter effect) ---------- */
-      const TYPE_TARGETS = ['#about p', '.skills li', '.Experience .description p'].join(',');
+      /* ---------- Typewriter targets (per-letter effect) - DISABLED ---------- */
+      /* const TYPE_TARGETS = ['#about p', '.skills li', '.Experience .description p'].join(',');
       function wrapTypewriterText(el) {
         if (!el || el.dataset.typed) return;
         const text = el.textContent;
@@ -511,7 +515,7 @@
           obs.unobserve(el);
         });
       }, { root: mainEl, threshold: 0.6 });
-      document.querySelectorAll(TYPE_TARGETS).forEach(el => typeObserver.observe(el));
+      document.querySelectorAll(TYPE_TARGETS).forEach(el => typeObserver.observe(el)); */
     })();
   </script>
 </body>

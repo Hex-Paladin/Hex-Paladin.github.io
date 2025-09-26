@@ -203,7 +203,7 @@ main {
     overflow-y: auto;
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--header-h) + 2rem);
-    scroll-snap-type: y proximity;
+    /* scroll-snap-type: y proximity; */
     scroll-timeline-name: --my-scroller;
     scroll-timeline-axis: block;
     scrollbar-gutter: stable;
@@ -229,9 +229,9 @@ main>section:nth-child(odd) {
     background: var(--background-alt);
 }
 
-main>section {
+/* main>section {
     scroll-snap-align: start;
-}
+} */
 
 /* Progress line under header */
 #progress {
@@ -1135,11 +1135,11 @@ img.avatar {
 }
 
 /* ==========================================================================
-   TYPEWRITER (multi-line, layout-safe)
+   TYPEWRITER (multi-line, layout-safe) - DISABLED
    ========================================================================== */
 
 /* reset any old snippet */
-p,
+/* p,
 li {
     white-space: normal;
     overflow: visible;
@@ -1153,7 +1153,7 @@ li {
 
 
 /* Per-character typewriter effect */
-.type-reveal.is-typing {
+/* .type-reveal.is-typing {
     animation: none;
 }
 
@@ -1185,7 +1185,7 @@ li {
 
 /* cursor (no layout shift) */
 
-.type-reveal.is-typing .type-cursor {
+/* .type-reveal.is-typing .type-cursor {
     display: inline-block;
     width: 0;
     height: var(--caret-h);
@@ -1199,7 +1199,7 @@ li {
     50% {
         opacity: 0;
     }
-}
+} */
 
 /* ==========================================================================
    VISUAL FX: headline glitch, CRT, mouse halo

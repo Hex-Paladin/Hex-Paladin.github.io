@@ -306,8 +306,8 @@
       }, { root: mainEl, threshold: 0.6 });
       sectionH2s.forEach(h => titleObserver.observe(h));
 
-      /* ---------- Typewriter targets (per-letter effect) ---------- */
-      const TYPE_TARGETS = ['#overview p', '#technical p'].join(',');
+      /* ---------- Typewriter targets (per-letter effect) - DISABLED ---------- */
+      /* const TYPE_TARGETS = ['#overview p', '#technical p'].join(',');
       function wrapTypewriterText(el) {
         if (!el || el.dataset.typed) return;
         const text = el.textContent;
@@ -370,7 +370,7 @@
           obs.unobserve(el);
         });
       }, { root: mainEl, threshold: 0.6 });
-      document.querySelectorAll(TYPE_TARGETS).forEach(el => typeObserver.observe(el));
+      document.querySelectorAll(TYPE_TARGETS).forEach(el => typeObserver.observe(el)); */
     })();
   </script>
 </body>
